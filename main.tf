@@ -26,7 +26,7 @@ data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
     bucket = "remote-state-lucasemanoel-2"
-    key    = "aws-pipeline/terraform.tfstate"
+    key    = "aws-vpc/terraform.tfstate"
     region = "us-east-1"
   }
 }
