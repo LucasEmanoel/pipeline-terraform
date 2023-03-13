@@ -3,15 +3,13 @@ terraform {
   required_version = ">= 1.3.0"
 
   required_providers {
-
     aws = {
+      version = "4.12.1"
       source  = "hashicorp/aws"
-      version = "3.73.0"
     }
   }
 
 }
-
 
 provider "aws" {
   region = "us-east-1"
@@ -27,8 +25,8 @@ provider "aws" {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "lucasemanoel-remote-state"
-    key    = "aws-vpc/terraform.tfstate"
+    bucket = "remote-state-lucasemanoel-2"
+    key    = "aws-pipeline/terraform.tfstate"
     region = "us-east-1"
   }
 }
